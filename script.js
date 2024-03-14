@@ -742,7 +742,8 @@ function load_comments() {
 function checkUserDevice() {
   let userAgent = navigator.userAgent.includes('Mobile')
   if(userAgent) {
-    window.location.href = window.location.hostname+"/mobile.html"
+    window.location.href = ''
+    window.location.href = window.location.origin+"/mobile.html"
   }
   
 }
