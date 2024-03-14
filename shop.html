@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="ihover.min.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="shop.css" />
+    <title>shop</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav">
+            <div class="nav-social-media">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a class="nav-item" href="index.html">صفحه نخست</a></li>
+                    <li class="nav-item"><a class="nav-item" href="#">مقالات</a></li>
+                </ul>
+                <a href="index.html" class="nav-image-link"><img src="icon.png" alt="icon" class="nav-image" /></a>
+                <ul>
+                    <li class="nav-item"><a class="nav-item" href="#">فروشگاه</a></li>
+                    <li class="nav-item">
+                        <a class="nav-item" href="#">تماس با ما</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-icon">
+                <i class="material-icons" id="search_header">search</i>
+                <i class="material-icons" id="user_header">perm_identity</i>
+                <i class="material-icons" id="favorite_header">favorite_border</i>
+                <i class="material-icons" id="basket_header">shopping_cart</i>
+            </div>
+        </div>
+        <div class="search-modal">
+            <div class="search-input">
+                <input type="text" placeholder="جستجو محصولات" />
+                <i class="material-icons" id="clear_search">clear</i>
+            </div>
+            <hr />
+            <p class="search-text">
+                برای دیدن محصولات که دنبال آن هستید تایپ کنید.
+            </p>
+        </div>
+        <div id="filter_blur"></div>
+        <div class="user-modal">
+            <div class="user-title">
+                <p class="user-title-text">ورود</p>
+                <div class="user-title-icon">
+                    <i class="material-icons clear-user">clear</i>
+                    <p>بستن</p>
+                </div>
+            </div>
+            <hr />
+            <form class="form" action="#">
+                <p>نام کاربری یا آدرس ایمیل <span>*</span></p>
+                <input type="text" class="user-input-text user-input" />
+                <p>رمز عبور<span>*</span></p>
+                <input type="password" class="user-input-password user-input" />
+                <button class="user-btn">ورود</button>
+                <div class="form-detaile">
+                    <div class="remember-me">
+                        <input class="user-checkbox" type="checkbox" name="checkbox" />
+                        <label class="user-checkbox-label" for="checkbox">
+                            مرا به خاطر بسپار</label>
+                    </div>
+                    <a class="user-forgot-password" href="#">رمز عبور را فراموش کرده اید؟</a>
+                </div>
+            </form>
+            <hr />
+            <div class="create-account">
+                <i class="material-icons create-account-icon">perm_identity</i>
+                <p class="create-account-text">هنوز حساب کاربری ندارید؟</p>
+                <a href="#" class="create-account-link">ایجاد حساب کاربری</a>
+            </div>
+            <hr />
+        </div>
+        <div class="basket-modal">
+            <div class="basket-title user-title">
+                <p class="user-title-text">سبد خرید</p>
+                <div class="user-title-icon basket-title-icon">
+                    <i class="material-icons clear-user">clear</i>
+                    <p>بستن</p>
+                </div>
+            </div>
+            <hr />
+            <div class="basket-modal_wrapper">
+                <div class="continue-shopping">
+                    <i class="material-icons">remove_shopping_cart</i>
+                    <p>هیچ محصولی در سبد خرید شما نیست</p>
+                    <a href="#"><button>بازگشت به فروشگاه</button></a>
+                </div>
+                <div class="basket-modal_wrapper_product">
+                    <!-- <div class="product-basket">
+                        <div class="product-basket-item">
+                            <img src="/images/maghz.jpg" alt="">
+                            <div class="product-basket-detail">
+                                <div class="product-basket-text">
+                                    <p> عسل مغز 450 گرمی </p>
+                                    <i class="material-icons remove-product-basket">clear</i>
+                                </div>
+                                <input type="number" name="range" id="range-basket" min="0" max="100">
+                                <div class="product-price-basket">
+                                    <span> 1 ×  </span>
+                                    <p> 990,000 تومان </p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> <hr> -->
+                </div>
+                <div class="basket-modal_wrappeer_price">
+                    <!-- <div class="all-price_product">
+                        <div class="all-price_title">
+                            <p> جمع کل سبد خرید: </p>
+                            <span>  990,000 تومان </span>
+                        </div>
+                        <a href="#" ><button id="all-price_product-btn1"> مشاهده سبد خرید </button></a>
+                        <a href="#" ><button id="all-price_product-btn2"> تسویه حساب </button></a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="scroll-top">
+            <i class="fa fa-angle-up"></i>
+        </div>
+    </header>
+    <main class="main main-shop" id="main">
+        <div class="container">
+            <div class="shop">
+                <p class="shop-title"> فروشگاه </p>
+                <div class="shop-wrapper">
+                    <div class="shop-nav-side">
+                        <div class="nav-side-box">
+                            <div class="box-title"> فیلتر موجودی و حراج </div>
+                            <div class="box-input">
+                                <input type="checkbox" name="special" id="special">
+                                <label for="special"> فروش ویژه </label>
+                            </div>
+                            <div class="box-input">
+                                <input type="checkbox" name="status" id="status">
+                                <label for="status"> موجود در انبار </label>
+                            </div>
+                        </div>
+
+                        <div class="nav-side-box">
+                            <div class="box-title"> فیلتر قیمت </div>
+                            <div class="box-input box-input_range">
+                                <div class="box-text">
+                                    <p class="box-price-title"> حداقل قیمت : </p>
+                                    <p class="box-price-min"> 0 تومان </p>
+                                </div>
+                                <input class="price-min" type="range" name="price-min" min="0" value="0" max="5000000" step="100000">
+                            </div>
+
+                            <div class="box-input box-input_range">
+                                <div class="box-text">
+                                    <p class="box-price-title"> حداکثر قیمت : </p>
+                                    <p class="box-price-max"> 0 تومان </p>
+                                </div>
+                                <input class="price-max" type="range" name="price-max" min="0" value="0" max="5000000" step="100000">
+                            </div>
+
+                            <button class="box-btn"> فیلتر </button>
+                        </div>
+
+                        <div class="nav-side-box">
+                            <div class="box-title"> دسته بندی محصولات </div>
+                            <ul class="box-list">
+                                <li class="box-item" id="bedoneMoom"> عسل بدون موم </li>
+                                <li class="box-item" id="tabie"> عسل طبیعی </li>
+                                <li class="box-item" id="darmani"> محصولات درمانی </li>
+                                <li class="box-item" id="other"> فراورده ها و لوازم جانبی </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="shop-product">
+                        <div class="shop-product-header">
+                            <div class="shop-product-header__link">
+                                <a href="index.html"> خانه </a>
+                                /
+                                <a href="shop.html" style="color: black;"><p> فروشگاه </p></a>
+                            </div>
+                            <div class="shop-product-header__show">
+                                <div class="show-product-number">
+                                    <h4> نمایش : </h4>
+                                    <p id="show-product-number-6"> 6 </p>
+                                    /
+                                    <p id="show-product-number-9"> 9 </p>
+                                    /
+                                    <p id="show-product-number-12" style="color: black;"> 12 </p>
+                                </div>
+                                <div class="show-product-icon">
+                                    <i class="fa fa-th"></i>
+                                    <span class="material-icons view_comfy">view_comfy</span>
+                                    <i class="fa fa-th-large"></i>
+                                </div>
+                                <select class="product-orderby">
+                                    <option value="popularity"> مرتب سازی بر اساس محبوبیت </option>
+                                    <option value="price-min"> مرتب سازی بر اساس ارزان ترین </option>
+                                    <option value="price-max"> مرتب سازی بر اساس گران ترین </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="shop-product-wrapper">
+
+                            <!-- <div class="shop-product-item">
+                                <div class="ih-item square effect6 bottom_to_top">
+                                    <a>
+                                        <div class="img">
+                                            <img src="/images/maghz.jpg" alt="img" />
+                                        </div>
+                                        <div class="info">
+                                            <img src="/images/maghz1.jpg" alt="" />
+                                            <div class="hover-image-nav">
+                                                <i class="material-icons tooltip">shopping_cart<span
+                                                        class="tooltiptext"> افزودن به سبد خرید </span></i>
+                                                <i class="material-icons tooltip">search<span class="tooltiptext">
+                                                        مشاهده سریع </span></i>
+                                                <i class="fa fa-random tooltip"><span class="tooltiptext"> مقایسه
+                                                    </span></i>
+                                                <i class="material-icons tooltip"
+                                                    id="favorite_product">favorite_border<span class="tooltiptext">
+                                                        افزودن به علاقه مندی </span></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a class="product-text" href="#">
+                                    <p>عسل مغز 450 گرمی</p>
+                                </a>
+                                <p class="product-price">450,000 تومان</p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="pagenumbers" id="pagination">
+                </div>
+            </div>
+            <div class="product-modal">
+                <!-- <div class="product-modal_image">
+                    <div class="swiper product-modal_swiper">
+                        <div class="swiper-wrapper product-modal_wrapper">
+                          <div class="swiper-slide"><img src="/images/anjir.jpg" alt=""></div>
+                          <div class="swiper-slide"><img src="/images/anjir1.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <button><a href="#"> نمایش جزئیات </a></button>
+                </div>
+                <div class="product-modal_detail">
+                    <i class="material-icons product-modal_detail-icon">clear</i>
+                    <a class="product-modal_detail-text" href="#"><p> عسل انجیر تازه </p></a>
+                    <p class="product-modal_detail-price"> 1,200,000 تومان </p>
+                    <ul>
+                        <li> حاوی 10 گرم ژل رویال با کیفیت اروپایی </li>
+                        <li> 10HDA بالای 6 </li>
+                        <li> ظرف نشکن با خاصیت ضدنور </li>
+                        <li> عدم نیاز به فریز کردن </li>
+                        <li> دارای خواص درمانی </li>
+                    </ul>
+                    <button class="product-modal_detail-btn"> افزودن به سبد خرید </button>
+                    <hr>
+                    <p class="product-modal_group"> دسته : <a href="#"> بدون موم </a></p>
+
+                    <div class="product-modal_socialmedia">
+                        <p class="product-modal_socialmedia-text"> اشتراک گذاری : </p>
+                        <div class="product-modal_socialmedia-icon">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <a href="#"><i class="fa fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="footer-item">
+                <p class="footer-item_text"> بهداشت شخصی </p>
+                <ul class="footer-item-list">
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> سلامت عمومی </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> بهداشت سالمندان </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> بهداشت جنسی </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> بهداشت بانوان </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> بهداشت دهان و دندان </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <p class="footer-item_text"> مردانه </p>
+                <ul class="footer-item-list">
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> محصولات بدن آقایان </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> اصلاح آقایان </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> محصولات موی آقایان </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> محصولات پوست آقایان </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <p class="footer-item_text"> لوازم شخصی برقی </p>
+                <ul class="footer-item-list">
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> حالت دهنده های برقی </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> اصلاح صورت و بدن </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> سایر لوازم شخصی برقی </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> خشک کن ها </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <p class="footer-item_text"> سالنی </p>
+                <ul class="footer-item-list">
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> تجهیزات آرایشگاهی </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> کتاب و جزوه </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> اپیلاسیون </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> کاشت و طراحی ناخن </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> اکستنشن </p>
+                    </li>
+                    <li>
+                        <i class="fa fa-angle-left"></i>
+                        <p> ابزار آرایش و پیرایش </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-item">
+                <p class="footer-item_text"> اعتماد شما افتخار ماست </p>
+                <div class="footer-image">
+                    <a href="#"><img src="enamad.png" alt=""></a>
+                    <a href="#"><img src="samandehi.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <p> تمام حقوق برای حسین پرورش محفوظ است. &copy</p>
+            <img src="897987.png" alt="">
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="shop.js"></script>
+    <script src="database.js"></script>
+</body>
+
+</html>
