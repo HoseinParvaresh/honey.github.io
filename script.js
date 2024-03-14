@@ -743,7 +743,7 @@ function checkUserDevice() {
   let userAgent = navigator.userAgent.includes('Mobile')
   if(userAgent) {
     window.location.href = ''
-    window.location.href = window.location.origin+"/mobile.html"
+    window.location.href = 'https://hoseinparvaresh.github.io/honey.github.io/mobile.html'
   }
   
 }
